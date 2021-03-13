@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+    <link rel="stylesheet" href="public/styles/style.css">
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1 class="header">Погода на сегодня</h1>
+    <div class="card__container"></div>
+    <script type="text/babel">
+        class WeatherCard extends React.Component {
+            render() {
+                return (
+                    <div className="card">
+                        <img className="img" src={this.props.img}  alt={"text"}/>
+                        <p className="time">{this.props.time}</p>
+                        <p className="temperature">{this.props.temperature}</p>
+                        <p className="precipitation">Вероятность осадков: {this.props.precipitation}</p>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(
+            <div className="card__wrapper">
+                <WeatherCard img={"public/img/sun.png"} time={"Утро"} temperature={"7°С"} precipitation={"20%"}/>
+                <WeatherCard img={"public/img/noon.png"} time={"Полдень"} temperature={"20°С"} precipitation={"80%"}/>
+                <WeatherCard img={"public/img/clouds.png"} time={"Вечер"} temperature={"14°С"} precipitation={"50%"}/>
+                <WeatherCard img={"public/img/moon.png"} time={"Ночь"} temperature={"5°С"} precipitation={"10%"}/>
+            </div>,
+         document.querySelector(".card__container")
+        )
+    </script>
+</body>

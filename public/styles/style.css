@@ -1,0 +1,44 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    height: auto;
+    background: #0f0e17;
+    color: #a7a9be;
+}
+
+.header {
+    text-align: center;
+}
+
+.card {
+    border: #ff8906 solid 1px;
+    margin-top: 50px;
+    margin-left: 20px;
+    padding: 30px;
+    height: 600px;
+    width: 200px;
+    text-align: center;
+}
+
+.card__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.img {
+    padding-top: 20px;
+    height: 100px;
+    width: 100px;
+}
+
+.time {
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.temperature {
+    font-size: 30px;
+    font-weight: bold;
+}
+
